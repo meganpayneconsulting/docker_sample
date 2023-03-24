@@ -1,2 +1,8 @@
 *.sav
 *.png
+
+# images directory
+images
+
+# data file of test data, retained locally 
+penguin_data_to_predict.csv
