@@ -1,5 +1,5 @@
 from sklearn.model_selection import train_test_split
-from pandas import read_csv, to_csv
+from pandas import read_csv
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from joblib import dump
@@ -13,7 +13,7 @@ log_reg = LogisticRegression()
 df.dropna(how="any", inplace=True)
 
 x_variables = ['culmen_length_mm', 'culmen_depth_mm', 'flipper_length_mm', 'body_mass_g']
-X_train, X_test, y_train, y_test = train_test_split(df[x_vars], df['species'], random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(df[x_variables], df['species'], random_state=42)
 
 
 ## Let's save some data to predict on. 
