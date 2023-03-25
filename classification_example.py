@@ -17,14 +17,13 @@ X_train, X_test, y_train, y_test = train_test_split(df[x_variables], df['species
 
 
 ## Let's save some data to predict on. 
-# X_test[x_vars] = scaler.fit_transform(X_test[x_vars].to_numpy())
 X_test.to_csv("penguin_data_to_predict.csv")
 X_test.head()
 
 def train_model(X_train, y_train, x_variables):
     """ This takes X_train, y_train and returns a trained model. 
         Vars are numeric and should be scaled first. """
-    X_train[x_vars] = scaler.fit_transform(X_train[x_vars].to_numpy())
+    X_train[x_variables] = scaler.fit_transform(X_train[x_variables].to_numpy())
     return log_reg.fit(X_train, y_train)
 
 def predict_from_model(new_data, model):
@@ -32,7 +31,7 @@ def predict_from_model(new_data, model):
     return model.predict(new_data)
 
 # Train the model and run a sample prediction
-model = train_model(X_train, y_train, x_vars)
+model = train_model(X_train, y_train, x_variables)
 predict_from_model([0.576190, 0.108108, 0.584906, 0.650000], model)
 
 # Save and load the model and the scaler fit using joblib
