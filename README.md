@@ -30,6 +30,8 @@ To run: (see the explanation of steps below for details)
 Docker has [complete instructions](https://docs.docker.com/get-docker/) on how to install the docker software. 
 This is how the docker container will be built.
 
+Note: Additional setup needs to be done on Linux to run as a non root user. If you don't do that step, add sudo to all the docker commands.
+
 ### Build and run the sample docker container
 
 The first step is to pull the base image from the [Docker container image library](https://hub.docker.com/). 
