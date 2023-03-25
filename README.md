@@ -1,10 +1,12 @@
-# Sample docker container that serves a model using Flask
+# Using Flask with Docker: a classification example
 
-## Running instructions
+This repo is a sample workflow to taking a machine learning model and copying it inside a docker container to query off of. The provided model is a penguin classification model using logistic regression, however any model using tabular data with a prediction step can be substituted here. The running instructions are a quick start guide and more detail is included below.
+
+## Running instructions (Quick Start)
 
 This builds a docker container and allows the user to query the penguin classification machine learning model using curl or a GUI like Postman.
 
-To run: 
+To run: (see the explanation of steps below for details)
 
 1. install docker on the host computer
 2. build and run the sample docker container
@@ -18,7 +20,7 @@ To run:
 4. build and run the docker container with the classification model
     * docker build -t penguin_model -f Dockerfile .
     * docker run -i -p 8080:5000 penguin_model
-5. Use curl to query using sample data
+5. Use curl to query using sample data in a dictionary with key X_new
     * curl -v -H "Content-Type: application/json" -d '{"X_new":"46.2,14.5,209.0,48800"}' http://127.0.0.1:8080/predict
 
 ## Explanation of each step
